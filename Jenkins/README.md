@@ -188,7 +188,7 @@ if the job fails/times out...
 2. create webhook
 
 ### Job 2!
-1. follow the same steps as job 1 to create a  - no need to tick, it does not need to "listen" for a webhook, this job is triggered by job 1 not github ![alt text](image-1.png)
+1. follow the same steps as job 1 to create a  - no need to tick, it does not need to "listen" for a webhook, this job is triggered by job 1 not github ![alt text](images/image-1.png)
 2. when in build environment, tick SSH agent 
 ![alt text](images/cicdimage-19.png)
 1. when in build steps, we want it to merge the files so
@@ -197,17 +197,17 @@ if the job fails/times out...
 **BETTER PRACTICE (Use a jenkins plug-in)**
 use git publisher!
 1. go to post build actions
-![alt text](image.png)
+![alt text](images/image.png)
 2. select:
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 3. add branches and type main as the branch you want to push and the target remote name is main
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 
 ### Job 3!
 1. create an EC2 instance [AWS instance](../AWS/README.md)
 2. add an ssh agent - input your aws private key
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 3. when we get to build steps:
    1. you want the jenkins to enter the app folder and to copy the contents - so you cd into the app folder and use $pwd command
    2. use the ```StrictHostKeyChecking=no``` to bypass the host key verification step, so it doesn't ask when you first ssh into a instance
